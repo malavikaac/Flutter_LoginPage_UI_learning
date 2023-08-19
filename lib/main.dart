@@ -10,10 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       home: Homepage(),
       debugShowCheckedModeBanner: false,
     );
@@ -25,10 +24,18 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        // height: 200,
-        // width: 200,
-        // color: const Color.fromARGB(255, 161, 49, 49),
-        );
+    return Scaffold(
+      appBar: AppBar(title: Text("Theme")),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 200,
+          width: 200,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Color.fromARGB(255, 163, 60, 60)),
+        ),
+      ),
+    );
   }
 }
